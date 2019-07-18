@@ -8,7 +8,7 @@ Get the contrast ratio of two layers with realtime feedback.
 
 ## Installation
 
-- [Download](../../releases/latest/download/text-contrast.sketchplugin.zip) the latest release of the plugin
+- [Download](../../releases/latest/download/check-contrast.sketchplugin.zip) the latest release of the plugin
 - Un-zip
 - Double-click on text-contrast.sketchplugin
 
