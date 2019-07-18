@@ -1,5 +1,6 @@
 {
   "name": "check-contrast",
+  "description": "Allows you to select layers in Sketch and get realtime feedback about the contrast ratio",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
@@ -32,7 +33,6 @@
     "sketch-module-web-view": "^3.0.1",
     "tinycolor2": "^1.4.1"
   },
-  ,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lifeofmle/check-contrast.git"
