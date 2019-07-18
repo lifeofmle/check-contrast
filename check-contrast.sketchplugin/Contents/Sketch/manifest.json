@@ -1,0 +1,33 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Check Contrast",
+      "identifier": "text-contrast.my-command-identifier",
+      "shortcut": "ctrl alt c",
+      "script": "command.js",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "Shutdown": "onShutdown",
+          "SelectionChanged.finish": "onSelectionChanged"
+        }
+      }
+    }
+  ],
+  "menu": {
+    "title": "Check Contrast",
+    "isRoot": true,
+    "items": [
+      "text-contrast.my-command-identifier"
+    ]
+  },
+  "version": "0.1.0",
+  "name": "check-contrast",
+  "identifier": "check-contrast",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "Michael Le",
+  "authorEmail": "lifeofmle"
+}

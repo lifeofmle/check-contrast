@@ -1,0 +1,203 @@
+/* some default styles to make the view more native like */
+
+html {
+  box-sizing: border-box;
+  background: transparent;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont;
+
+  /* Prevent the page to be scrollable */
+  overflow: hidden;
+
+  /* Force the default cursor, even on text */
+  cursor: default;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  /* Prevent the content from being selectionable */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-size: 16px;
+}
+
+main {
+  width: 420px;
+  height: 150px;
+
+  position: relative;
+}
+
+#foreground {
+  position: absolute;
+  left: 27px;
+  top: 42px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#foreground-area {
+  z-index: 1;
+  position: relative;
+}
+
+/* #foreground-area .disc {
+  background-color: #D4D9D9;
+} */
+
+#background {
+  position: absolute;
+  right: 19px;
+  top: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#background-area {
+  order: 2;
+  z-index: 1;
+  position: relative;
+}
+
+/* #background-area .disc {
+  background-color: #176799;
+} */
+
+.color-label {
+  background: rgba(109,109,144,0.10);
+  padding: 4px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+#foreground-details.color-label {
+  margin-left: -8px;
+}
+#background-details.color-label {
+  margin-right: -8px;
+}
+
+#ratio {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  margin-left: -34px;
+}
+.checker {
+  background-image: linear-gradient(45deg, #858585 25%, transparent 25%), linear-gradient(-45deg, #858585 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #858585 75%), linear-gradient(-45deg, transparent 75%, #858585 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+  background-blend-mode: overlay;
+  opacity: 0.3;
+}
+#ratio-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  font-weight: bold;
+  line-height: 24px;
+  color: #fff;
+}
+#ratio-value {
+  line-height: 18px;
+}
+#ratio-label {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#ratio-disc {
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid #0E1012;
+}
+
+#ratio-disc.aaa {
+  background-image: linear-gradient(180deg, #1FCCC0 0%, #0F6660 100%);
+  box-shadow: 2px -4px 12px 0 rgba(0,0,0,0.68), inset 0 0 20px 0 #0F6660;
+  color: #fff;
+}
+
+#ratio-disc.aa {
+  background-image: linear-gradient(180deg, #FFDB00 0%, #FCA200 31%, #995B00 100%);
+  box-shadow: 2px -4px 12px 0 rgba(0,0,0,0.68), inset 0 0 20px 0 #D47B00;
+  color: #fff;
+}
+
+#ratio-disc.fail {
+  background-image: linear-gradient(180deg, #F4606D 0%, #A6051D 100%);
+  box-shadow: 2px -4px 12px 0 rgba(0,0,0,0.68);
+  color: #fff;
+}
+
+#ratio-disc.idle {
+  background: #fff;
+  border: 2px solid #f8f8f8;
+}
+
+#ratio-disc.idle  #ratio-area {
+  color: #8D8E8E;
+}
+#ratio-disc.idle .checker {
+  background-image: unset;
+}
+
+.circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.circle.large {
+  width: 80px;
+  height: 80px;
+}
+
+.circle .blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(78,51,15,0.30);
+  box-shadow: inset 0 0 20px 0 #FFFFFF;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circle .inset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFFFFF;
+  box-shadow: inset 0 4px 4px 0 rgba(0,0,0,0.20);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circle .disc {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
