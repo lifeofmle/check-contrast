@@ -10,7 +10,7 @@ Get the contrast ratio of two layers with realtime feedback.
 
 - [Download](../../releases/latest/download/check-contrast.sketchplugin.zip) the latest release of the plugin
 - Un-zip
-- Double-click on text-contrast.sketchplugin
+- Double-click on check-contrast.sketchplugin
 
 ## What it does
 Opens a panel so that you can view the colour contrast ratio and pick colours at the same time.
