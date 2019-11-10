@@ -4403,8 +4403,7 @@ function checkLayer() {
         backgroundColorLabel: '#' + tinycolor2__WEBPACK_IMPORTED_MODULE_4___default()(color2).toHex(),
         ratioValue: Math.round(contrastRatio * 100) / 100,
         ratioLabel: getRatioLabel(contrastRatio),
-        status: selection.layers[0].getParentArtboard.background.color // getRatioStatus(contrastRatio)
-
+        status: getRatioStatus(contrastRatio)
       };
     }
   } else {
