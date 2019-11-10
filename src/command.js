@@ -53,7 +53,7 @@ function openPanel() {
       status: getRatioStatus()
     };
     const existingWebview = getWebview(webviewIdentifier);
-    displayData(existingWebviewd, data);
+    displayData(existingWebview, data);
   })
 
   const webContents = browserWindow.webContents
@@ -85,6 +85,8 @@ function getFill(layer) {
   if (layer && layer.style) {
     if (layer.type == 'Text'){
       return layer.style.textColor;
+    } else if (layer.type == 'Artboard') {
+      return layer.background.color;
     } else {
       var fills = layer.style.fills;
       return fills[0].color;
@@ -126,7 +128,7 @@ function intersect(a, b) {
 }
 
 function getClosestLayer(layer){
-  // // access the artboard the layer is in
+  // access the artboard the layer is in
   var artboard = layer.getParentArtboard();
   if (artboard.layers) {
     var intersectingLayers = [];
@@ -141,9 +143,13 @@ function getClosestLayer(layer){
         }
       }
     });
+    // if nothing interesects then return the artboard
+    if (intersectingLayers.length == 0 ){
+      return artboard;
+    }
     // Return the closest one (layer.index)
-   var closestIndex = Math.max(...intersectingLayers.map(x => x.index));
-   return intersectingLayers.find((item) => item.index == closestIndex);
+    var closestIndex = Math.max(...intersectingLayers.map(x => x.index));
+    return intersectingLayers.find((item) => item.index == closestIndex);
   }
   return null;
   // artboard.getParentArtboard() === undefined
@@ -215,7 +221,7 @@ function checkLayer() {
         backgroundColorLabel: '#'+tinycolor(color2).toHex(),
         ratioValue: Math.round(contrastRatio * 100) / 100,
         ratioLabel: getRatioLabel(contrastRatio),
-        status: getRatioStatus(contrastRatio)
+        status: selection.layers[0].getParentArtboard.background.color // getRatioStatus(contrastRatio)
       };
     }
   }else{
@@ -227,7 +233,7 @@ function checkLayer() {
       backgroundColorLabel: ' ',
       ratioValue: getRatioLabel(),
       ratioLabel: '',
-      status: getRatioStatus()
+      status:  getRatioStatus()
     };
   }
 
